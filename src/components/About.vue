@@ -8,8 +8,8 @@
     export default {
         name: 'About',
         mounted() {
-            console.log('here');
-            alert('s')
+
+
         },
         methods:{
             log(text){
