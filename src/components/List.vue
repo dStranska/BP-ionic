@@ -1,7 +1,7 @@
 <template>
     <ion-content>
         <ion-list>
-            <ion-item v-for="i in this.items" :key="i.subject">
+            <ion-item v-for="i in items" :key="i.subject">
                 <ion-label>
                     <h2>{{i.subject}}</h2>
                     <h3>Moje znamka: {{i.score}}</h3>
@@ -14,12 +14,10 @@
 <script>
     export default {
         name: "List",
-        mounted() {
-        },
         data() {
             return {
                 items: [
-                    {subject: 'MAtika', score: 4},
+                    {subject: 'MAT', score: 4},
                     {subject: 'PSA', score: 4},
                     {subject: 'WT1', score: 1},
                     {subject: 'PS1', score: 6},
@@ -36,7 +34,3 @@
         }
     }
 </script>
-
-<style scoped>
-
-</style>

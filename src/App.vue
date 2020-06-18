@@ -1,8 +1,9 @@
 <template>
     <ion-app id="app">
 
-        <menu-component></menu-component>
-        <ion-router-outlet id="menuContent"></ion-router-outlet>
+        <ion-router-outlet id="menuContent">
+            <menu-component></menu-component>
+        </ion-router-outlet>
 
 
         <ion-header>
@@ -17,7 +18,7 @@
             </ion-toolbar>
         </ion-header>
         <ion-content id="content">
-            <ion-vue-router/>
+            <router-view />
         </ion-content>
 
     </ion-app>
