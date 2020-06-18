@@ -1,5 +1,5 @@
 <template>
-    <ion-menu side="start"  menu-id="main" content-id="content">
+    <ion-menu side="start"  menu-id="main" content-id="content" ref="mainMenu">
         <ion-header>
             <ion-toolbar translucent>
                 <ion-title>Menu</ion-title>
@@ -9,15 +9,15 @@
             <ion-list>
 
                 <ion-item v-on:click="myRedirect('login')">
-                    <ion-icon name="mail" slot="start"></ion-icon>
+                    <MailIcon slot="start" />
                     <ion-label>Login</ion-label>
                 </ion-item>
-                <ion-item v-on:click="myRedirect('login')">
-                    <ion-icon name="warning" slot="start"></ion-icon>
+                <ion-item v-on:click="myRedirect('list')">
+                    <WarningIcon slot="start" />
                     <ion-label>List</ion-label>
                 </ion-item>
-                <ion-item v-on:click="myRedirect('login')">
-                    <ion-icon name="mail" slot="start"></ion-icon>
+                <ion-item v-on:click="myRedirect('about')">
+                    <MailIcon slot="start" />
                     <ion-label>About</ion-label>
                 </ion-item>
             </ion-list>
@@ -27,13 +27,16 @@
 </template>
 
 <script>
+    import MailIcon from 'vue-ionicons/dist/ios-mail'
+    import WarningIcon from 'vue-ionicons/dist/ios-warning'
+
     export default {
         name: "Menu",
+        components: { MailIcon, WarningIcon },
         methods:{
             myRedirect(str){
-                console.log(str)
-                //this.$router.push({path: `/${str}`})
-
+                this.$router.push({name: str})
+                this.$refs.mainMenu.close("main")
             }
         }
     }

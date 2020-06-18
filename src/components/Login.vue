@@ -5,9 +5,10 @@
                 v-bind:value="user.login"
                 placeholder="Login">
         </ion-input>
-        <ion-input v-on:ionInput="user.password=$event.target.value"
-                   v-bind:value="user.password" placeholder="Password">
-
+        <ion-input
+                v-on:ionInput="user.password=$event.target.value"
+                v-bind:value="user.password"
+                placeholder="Password">
         </ion-input>
 
         <ion-button v-on:click="login()">Login</ion-button>
